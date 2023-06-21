@@ -1,4 +1,4 @@
-# Customer Churn Prediction Project
+# Bank Customer Churn Prediction Project
 ![customer_churn](customer_churn.png)
 ## Introduction
 
@@ -179,5 +179,6 @@ Logistic Regression Model:
     Recall (Churned Customers): 0.20
     F1-Score (Churned Customers): 0.30
 ```
+
 
 The SVM model outperforms the logistic regression model in terms of accuracy and performance for customer churn prediction.
