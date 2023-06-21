@@ -36,9 +36,30 @@ The dataset consists of information about 10,000 bank customers. Here are some k
 - The churn rate is 20.37%, suggesting that approximately one-fifth of the customers have churned.
 
 ## 2. Data Visualization
-![customer_churn](graphs/churnd_or_not_churned.png)
+![customer_churn](graphs/churned_or_not_churned.png)
+
+In this dataset, there is an imbalance between the number of retained customers and the number of customers who left the bank. Retained customers are over-represented, comprising approximately 20.4% of the dataset, while customers who left the bank account for the remaining portion. This imbalance can potentially introduce bias in the modeling process.
+
 ![customer_churn](graphs/dist_continuous_variables.png)
+
+
+- **credit_score:** On average, not churned customers have a slightly higher credit score (651.85) compared to churned customers (645.35).
+- **age:** The average age of churned customers (44.84) is higher than that of not churned customers (37.41).
+- **tenure:** There is a negligible difference in the average tenure between not churned (5.03) and churned (4.93) customers.
+- **balance:** Churned customers have a higher average balance (91108.54) compared to not churned customers (72745.30).
+- **products_number:** The average number of products is slightly lower for churned customers (1.48) compared to not churned customers (1.54).
+- **estimated_salary:** The average estimated salary is slightly higher for churned customers (101465.68) compared to not churned customers (99738.39).
+
+
+
 ![customer_churn](graphs/dist_categorical_variables.png)
+
+
+- **Gender:** The churned percentage for female customers is 25.07%, while for male customers it is 16.46%. This suggests that female customers have a higher likelihood of churning compared to male customers.
+- **Country:** Among the countries in the dataset, Germany has the highest churned percentage at 32.44%, followed by Spain at 16.67% and France at 16.15%. This indicates that customers from Germany are more likely to churn compared to customers from the other countries.
+- **Credit Card:** Both categories, 0 and 1, have similar churned percentages of approximately 20.18% and 20.81% respectively. This suggests that the presence of a credit card does not significantly impact the likelihood of churn.
+- **Active Member:** Customers who are active members (category 1) have a lower churned percentage of 14.27%, while non-active members (category 0) have a higher churned percentage of 26.85%. This indicates that being an active member contributes to higher customer retention.
+
 
 ## 3. Data Preprocessing
 ### Feature Analysis
@@ -83,6 +104,13 @@ In summary, country, active_member, and gender variables have an impact on the c
 **Based on the two previous analysis, the variables  "credit_card", "credit_score" and "estimated_salary" will be dropped**
 
 ### Encoding of categorical descriptors
+
+Encoding variables is important to represent categorical data in a format that can be effectively used by machine learning algorithms. In the case of gender, encoding it as numerical values (e.g., 0 for male, 1 for female) allows algorithms to interpret and process the data. This conversion enables the algorithms to identify patterns and relationships in the data that can be used for making predictions or classifications. By encoding variables, we make the data more accessible and compatible with machine learning techniques, improving the overall accuracy and effectiveness of the models.
+
 ### Min-Max scaling
+Scaling is important in machine learning to ensure variables are on a similar scale. Min-Max scaling, or normalization, transforms data to a fixed range (e.g., 0-1). It preserves relative relationships between data points, benefits non-Gaussian distributions, and improves algorithm performance and convergence. Scaling eliminates bias from variables with larger magnitudes and facilitates accurate predictions.
+
+
+**In a real-world scenario, it is often beneficial to engineer new variables by combining existing variables to capture more complex relationships and improve predictive power. However, for the purpose of this demonstration project, we will focus on utilizing the variables that are already available in the dataset without introducing additional engineered variables.**
 
 ## Model Training and Evaluation
