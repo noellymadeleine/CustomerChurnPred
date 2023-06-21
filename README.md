@@ -40,7 +40,7 @@ The dataset consists of information about 10,000 bank customers. Here are some k
 
 In this dataset, there is an imbalance between the number of retained customers and the number of customers who left the bank. Retained customers are over-represented, comprising approximately 20.4% of the dataset, while customers who left the bank account for the remaining portion. This imbalance can potentially introduce bias in the modeling process.
 
-![customer_churn](graphs/dist_continuous_variables.png)
+![dist_continuous_variable](graphs/dist_continuous_variables.png)
 
 
 - **credit_score:** On average, not churned customers have a slightly higher credit score (651.85) compared to churned customers (645.35).
@@ -52,7 +52,7 @@ In this dataset, there is an imbalance between the number of retained customers 
 
 
 
-![customer_churn](graphs/dist_categorical_variables.png)
+![dist_categorical_variables](graphs/dist_categorical_variables.png)
 
 
 - **Gender:** The churned percentage for female customers is 25.07%, while for male customers it is 16.46%. This suggests that female customers have a higher likelihood of churning compared to male customers.
@@ -67,7 +67,7 @@ In this dataset, there is an imbalance between the number of retained customers 
 The aim of this part of the code is to perform a comprehensive analysis of the dataset's features and their relationships. By calculating the correlation matrix, we aim to uncover any linear associations between continuous variables, which helps us understand how changes in one variable may impact another. Additionally, conducting the chi-square analysis allows us to examine the dependence between categorical variables and identify any significant associations. This information is crucial for gaining insights into the underlying patterns, dependencies, and potential predictors within the dataset. Ultimately, this analysis aids in feature selection, identifying key variables, and understanding the factors that may influence the target variable or outcome of interest.
 
 **Correlation Matrix:**
-![customer_churn](graphs/corr_matrix.png)
+![corr_matrix](graphs/corr_matrix.png)
 
 Looking at the correlation matrix of the continuous variables, we can observe the following:
 
@@ -141,7 +141,7 @@ weighted avg       0.78      0.81      0.77      2000
 
 ### Support Vector Machine (SVM)
 #### Results
-![confusion_matrix_SVM](graphs/confusion_matrix_SVM.png)
+![confusion_matrix_SVM2](graphs/confusion_matrix_SVM.png)
 
 ```
              precision    recall  f1-score   support
