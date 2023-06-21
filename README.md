@@ -114,3 +114,70 @@ Scaling is important in machine learning to ensure variables are on a similar sc
 **In a real-world scenario, it is often beneficial to engineer new variables by combining existing variables to capture more complex relationships and improve predictive power. However, for the purpose of this demonstration project, we will focus on utilizing the variables that are already available in the dataset without introducing additional engineered variables.**
 
 ## Model Training and Evaluation
+
+### Logistic regression model
+
+#### Results
+![confusion_matrix_LR](graphs/confusion_matrix_LR.png)
+
+```
+precision    recall  f1-score   support
+
+           0       0.83      0.96      0.89      1607
+           1       0.56      0.20      0.30       393
+
+    accuracy                           0.81      2000
+   macro avg       0.70      0.58      0.59      2000
+weighted avg       0.78      0.81      0.77      2000
+```
+
+
+- Test Accuracy: The model achieved an accuracy of 81.20% on the test set, indicating that it correctly classified 81.20% of the samples.
+- Precision: For the positive class (churned customers), the precision is 0.56, suggesting that out of all the predicted churned customers, only 56% were actually churned.
+- Recall: The recall for the positive class is 0.20, indicating that the model was able to correctly identify only 20% of the actual churned customers.
+- F1-Score: The F1-score is a harmonic mean of precision and recall. For the positive class, the F1-score is 0.30, reflecting a trade-off between precision and recall.
+- Confusion Matrix: the matrix shows that the model correctly predicted 1544 non-churned customers (true negatives) and 80 churned customers (true positives). However, it also misclassified 63 non-churned customers as churned (false positives) and 313 churned customers as non-churned (false negatives).
+
+
+### Support Vector Machine (SVM)
+#### Results
+![confusion_matrix_SVM](graphs/confusion_matrix_SVM.png)
+
+```
+             precision    recall  f1-score   support
+
+           0       0.87      0.98      0.92      1607
+           1       0.80      0.40      0.53       393
+
+    accuracy                           0.86      2000
+   macro avg       0.83      0.69      0.73      2000
+weighted avg       0.85      0.86      0.84      2000
+```
+
+- Test Accuracy: The model achieved an accuracy of 86.20% on the test set, indicating that it correctly classified 86.20% of the samples.
+- Precision: For the positive class (churned customers), the precision is 0.80, suggesting that out of all the predicted churned customers, 80% were actually churned.
+- Recall: The recall for the positive class is 0.40, indicating that the model was able to correctly identify 40% of the actual churned customers.
+- F1-Score: The F1-score is a harmonic mean of precision and recall. For the positive class, the F1-score is 0.53, reflecting a trade-off between precision and recall.
+- Confusion Matrix: the matrix shows that the model correctly predicted 1567 non-churned customers (true negatives) and 157 churned customers (true positives). However, it misclassified 40 non-churned customers as churned (false positives) and 236 churned customers as non-churned (false negatives).
+
+
+
+## Conclusion
+
+In this project, we developed and evaluated two models, a Support Vector Machine (SVM) model and a logistic regression model, for predicting bank customer churn. Here is a comparison of their performance and suggestions for improvement:
+
+```
+SVM Model:
+    Accuracy: 86.20%
+    Precision (Churned Customers): 0.80
+    Recall (Churned Customers): 0.40
+    F1-Score (Churned Customers): 0.53
+
+Logistic Regression Model:
+    Accuracy: 81.20%
+    Precision (Churned Customers): 0.56
+    Recall (Churned Customers): 0.20
+    F1-Score (Churned Customers): 0.30
+```
+
+The SVM model outperforms the logistic regression model in terms of accuracy and performance for customer churn prediction.
