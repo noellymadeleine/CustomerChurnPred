@@ -69,18 +69,9 @@ The aim of this part of the code is to perform a comprehensive analysis of the d
 **Correlation Matrix:**
 ![corr_matrix](graphs/corr_matrix.png)
 
-Looking at the correlation matrix of the continuous variables, we can observe the following:
 
-- Credit Score: It shows very weak correlation with all other variables, indicating that it may not have a significant impact on the other variables or the churn rate. It could be a candidate for dropping.
-- Age: There is no strong correlation with any other variable. However, age is often considered an important factor in predicting churn, so it may still be valuable to retain.
-- Tenure: It has a very weak positive correlation with estimated salary. This suggests that customers with longer tenure may have slightly higher estimated salaries, but the correlation is not strong enough to conclude a significant impact on churn.
-- Balance: There is a weak negative correlation with products number, indicating that customers with higher balances may have fewer products. However, the correlation is not strong enough to make a definite conclusion about its impact on churn.
-- Products Number: It has a weak negative correlation with balance, suggesting that customers with more products may have lower balances. However, the correlation is not strong enough to make a conclusive judgment about its impact on churn.
-- Estimated Salary: It shows no strong correlation with any other variable, indicating that it may not have a significant impact on the other variables or the churn rate. It could be a candidate for dropping.
-
-Based on these observations, the variables that could potentially be dropped are "credit_score" and "estimated_salary" as they exhibit weak correlations with other variables. However, it is important to further analyze these variables and consider other factors before making a final decision on variable selection.
-
-
+The correlation matrix do not show highly correlated variables that can be dropped. Also, we saw earlier that "credit_score" and "estimated_salary" do not affect the customer churn. Therefore, we could drop these columns for the model building.
+ However, it is important to further analyze these variables and consider other factors before making a final decision on variable selection.
 **Chi-square test:**
 
 ```        
@@ -106,9 +97,6 @@ In summary, country, active_member, and gender variables have an impact on the c
 ### Encoding of categorical descriptors
 
 Encoding variables is important to represent categorical data in a format that can be effectively used by machine learning algorithms. In the case of gender, encoding it as numerical values (e.g., 0 for male, 1 for female) allows algorithms to interpret and process the data. This conversion enables the algorithms to identify patterns and relationships in the data that can be used for making predictions or classifications. By encoding variables, we make the data more accessible and compatible with machine learning techniques, improving the overall accuracy and effectiveness of the models.
-
-### Min-Max scaling
-Scaling is important in machine learning to ensure variables are on a similar scale. Min-Max scaling, or normalization, transforms data to a fixed range (e.g., 0-1). It preserves relative relationships between data points, benefits non-Gaussian distributions, and improves algorithm performance and convergence. Scaling eliminates bias from variables with larger magnitudes and facilitates accurate predictions.
 
 
 **In a real-world scenario, it is often beneficial to engineer new variables by combining existing variables to capture more complex relationships and improve predictive power. However, for the purpose of this demonstration project, we will focus on utilizing the variables that are already available in the dataset without introducing additional engineered variables.**
