@@ -72,6 +72,7 @@ The aim of this part of the code is to perform a comprehensive analysis of the d
 
 The correlation matrix do not show highly correlated variables that can be dropped. Also, we saw earlier that "credit_score" and "estimated_salary" do not affect the customer churn. Therefore, we could drop these columns for the model building.
  However, it is important to further analyze these variables and consider other factors before making a final decision on variable selection.
+
 **Chi-square test:**
 
 ```        
